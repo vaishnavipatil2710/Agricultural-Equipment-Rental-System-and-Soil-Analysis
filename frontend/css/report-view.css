@@ -1,0 +1,397 @@
+:root {
+    --primary-green: #2e7d32;
+    --dark-green: #176b3a;
+    --light-green: #e8f5e9;
+    --bg-light: #f4f7f6;
+    --border: #dfe8e1;
+    --text-dark: #26352a;
+    --text-muted: #66736b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #eef7ef, #f7faf8);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px 100px;
+    color: var(--text-dark);
+}
+
+/* =========================
+   REPORT
+========================= */
+
+.report-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 45px;
+    border-top: 8px solid var(--primary-green);
+    border-radius: 12px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+    position: relative;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    border-bottom: 2px solid #edf0ed;
+    padding-bottom: 22px;
+}
+
+.logo-section h1 {
+    color: var(--primary-green);
+    margin: 0;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.logo-section p {
+    margin: 6px 0 0;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.report-title {
+    text-align: right;
+}
+
+.report-title h2 {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 22px;
+}
+
+.report-title p {
+    margin: 7px 0 0;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* =========================
+   META INFO
+========================= */
+
+.meta-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 22px;
+}
+
+.meta-info p {
+    margin: 0;
+    padding: 13px 15px;
+    background: #f7faf7;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.meta-info strong {
+    color: var(--dark-green);
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status-banner {
+    background: var(--primary-green);
+    color: white;
+    padding: 13px;
+    text-align: center;
+    font-weight: bold;
+    margin: 22px 0;
+    border-radius: 7px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* =========================
+   RESULTS
+========================= */
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin: 28px 0;
+}
+
+.result-card {
+    background: #fbfcfb;
+    padding: 20px 12px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: 0.2s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.10);
+}
+
+.result-card label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.result-card .value {
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--dark-green);
+    margin-top: 8px;
+}
+
+/* =========================
+   ADVICE / CROPS
+========================= */
+
+.advice-section,
+.crops-section {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f8fbf8;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.advice-section h3,
+.crops-section h3 {
+    margin: 0 0 12px;
+    color: var(--dark-green);
+    font-size: 17px;
+}
+
+.advice-section p {
+    margin: 0;
+    color: #536159;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.crop-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.crop-tags span {
+    background: var(--light-green);
+    color: var(--dark-green);
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    border: 1px solid #b9dcbc;
+    font-size: 13px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.report-footer {
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid #e5ebe6;
+    text-align: center;
+}
+
+.report-footer p {
+    margin: 0;
+    color: #78827c;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.floating-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.btn.download {
+    background: var(--primary-green);
+    color: white;
+}
+
+.btn.download:hover {
+    background: #256b29;
+    transform: translateY(-1px);
+}
+
+.btn.back {
+    background: #68736c;
+    color: white;
+}
+
+.btn.back:hover {
+    background: #515a55;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+    .report-container {
+        padding: 30px;
+    }
+
+    .results-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px 10px 90px;
+    }
+
+    .report-container {
+        padding: 22px 18px;
+        border-top-width: 6px;
+    }
+
+    .report-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .report-title {
+        text-align: left;
+    }
+
+    .logo-section h1 {
+        font-size: 24px;
+    }
+
+    .report-title h2 {
+        font-size: 19px;
+    }
+
+    .meta-info {
+        grid-template-columns: 1fr;
+    }
+
+    .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .result-card {
+        min-height: 100px;
+    }
+
+    .advice-section,
+    .crops-section {
+        padding: 16px;
+    }
+
+    .floating-actions {
+        position: fixed;
+        bottom: 15px;
+        left: 10px;
+        right: 10px;
+        margin: 0;
+        padding: 8px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+    }
+
+    .btn {
+        flex: 1;
+        padding: 11px 10px;
+    }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report-container {
+        padding: 18px 14px;
+    }
+}
+
+/* =========================
+   PRINT / PDF
+========================= */
+
+@media print {
+
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .report-container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 30px;
+        border-top: 6px solid var(--primary-green);
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .floating-actions {
+        display: none !important;
+    }
+
+    .result-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}

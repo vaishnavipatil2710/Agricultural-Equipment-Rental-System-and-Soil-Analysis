@@ -1,0 +1,526 @@
+/* =========================================================
+   AGRIRENT HUB - VENDOR BOOKINGS
+   UI ONLY
+   Backend + JavaScript unchanged
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+body {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239, 248, 239, 0.95),
+            rgba(220, 240, 222, 0.90)
+        ),
+        url("../assets/register.jpg")
+        center / cover no-repeat;
+
+    color: #26352a;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container {
+    width: min(1250px, 94%);
+
+    margin: 0 auto;
+
+    padding: 42px 0 65px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header-section {
+    margin-bottom: 30px;
+}
+
+.header-section h2 {
+    margin: 0;
+
+    color: #1b5e20;
+
+    font-size: clamp(27px, 3vw, 36px);
+
+    font-weight: 700;
+}
+
+.header-section h2::after {
+    content: "";
+
+    display: block;
+
+    width: 58px;
+    height: 4px;
+
+    margin-top: 11px;
+
+    background: #43a047;
+
+    border-radius: 20px;
+}
+
+.header-section p {
+    margin: 13px 0 0;
+
+    color: #657268;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+.table-container {
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    padding: 0;
+
+    border-radius: 16px;
+
+    border: 1px solid #e1e9e2;
+
+    box-shadow:
+        0 10px 30px rgba(43, 77, 49, 0.12);
+
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+table {
+    width: 100%;
+
+    min-width: 900px;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+th {
+    padding: 16px 14px;
+
+    background: linear-gradient(
+        135deg,
+        #1b5e20,
+        #2e7d32
+    );
+
+    color: white;
+
+    text-align: left;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+
+    white-space: nowrap;
+
+    border: none;
+}
+
+th:first-child {
+    border-top-left-radius: 16px;
+}
+
+th:last-child {
+    border-top-right-radius: 16px;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+td {
+    padding: 15px 14px;
+
+    color: #4d5a50;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid #edf1ed;
+
+    vertical-align: middle;
+
+    line-height: 1.45;
+}
+
+tbody tr {
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+tbody tr:hover {
+    background: #f3faf4;
+
+    box-shadow:
+        inset 4px 0 0 #43a047;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   BOOKING ID
+========================================================= */
+
+td:first-child {
+    color: #455a64;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CUSTOMER NAME
+========================================================= */
+
+td:nth-child(2) {
+    color: #26352a;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   EQUIPMENT
+========================================================= */
+
+td:nth-child(3) {
+    color: #2e7d32;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   DURATION
+========================================================= */
+
+td:nth-child(4) {
+    color: #59665c;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TOTAL AMOUNT
+========================================================= */
+
+td:nth-child(5) {
+    color: #1b5e20;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 6px 12px;
+
+    border-radius: 50px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    white-space: nowrap;
+}
+
+
+/* Pending */
+
+.status-pending {
+    background: #fff4cc;
+
+    color: #856404;
+
+    border: 1px solid #f3d778;
+}
+
+
+/* Approved */
+
+.status-approved {
+    background: #e5f5e7;
+
+    color: #155724;
+
+    border: 1px solid #b8dfbd;
+}
+
+
+/* =========================================================
+   ACTION COLUMN
+========================================================= */
+
+td:last-child {
+    min-width: 125px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CONFIRM BUTTON
+========================================================= */
+
+.btn-confirm {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 105px;
+
+    padding: 9px 14px;
+
+    background: linear-gradient(
+        135deg,
+        #2e7d32,
+        #43a047
+    );
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 4px 10px rgba(46, 125, 50, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.btn-confirm:hover {
+    background: linear-gradient(
+        135deg,
+        #1b5e20,
+        #2e7d32
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 15px rgba(46, 125, 50, 0.27);
+}
+
+.btn-confirm:active {
+    transform: translateY(0);
+}
+
+
+/* Disabled */
+
+.btn-confirm:disabled {
+    background: #cfd6d1;
+
+    color: #6d756f;
+
+    cursor: not-allowed;
+
+    box-shadow: none;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   LOADING / EMPTY TABLE ROWS
+========================================================= */
+
+tbody td[colspan] {
+    padding: 35px 20px;
+
+    color: #718074;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: 94%;
+
+        padding: 35px 0 55px;
+    }
+
+    .table-container {
+        border-radius: 14px;
+    }
+
+    table {
+        min-width: 900px;
+    }
+
+    th {
+        padding: 13px 10px;
+
+        font-size: 11px;
+    }
+
+    td {
+        padding: 12px 10px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+
+        padding: 28px 0 45px;
+    }
+
+    .header-section {
+        margin-bottom: 24px;
+    }
+
+    .header-section h2 {
+        font-size: 26px;
+    }
+
+    .header-section p {
+        font-size: 13px;
+    }
+
+    /*
+       Keep horizontal scrolling because the table
+       contains 7 dynamically generated columns.
+    */
+
+    .table-container {
+        overflow-x: auto;
+
+        border-radius: 12px;
+    }
+
+    table {
+        min-width: 850px;
+    }
+
+    th {
+        padding: 12px 9px;
+
+        font-size: 10px;
+    }
+
+    td {
+        padding: 11px 9px;
+
+        font-size: 12px;
+    }
+
+    .btn-confirm {
+        min-width: 90px;
+
+        padding: 8px 11px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .container {
+        width: 94%;
+
+        padding-top: 23px;
+    }
+
+    .header-section h2 {
+        font-size: 23px;
+    }
+
+    .header-section h2::after {
+        width: 48px;
+
+        height: 3px;
+    }
+
+    .header-section p {
+        font-size: 12px;
+    }
+}

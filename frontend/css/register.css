@@ -1,0 +1,137 @@
+/* =====================
+   GLOBAL
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url("../assets/register.jpg") center/cover no-repeat;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+    height: 55px;
+    background: #2f3b45;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.nav-left {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav-right a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-right a:hover {
+    text-decoration: underline;
+}
+
+/* =====================
+   REGISTER SECTION
+===================== */
+.register-container {
+    min-height: calc(100vh - 55px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.35);
+}
+
+.register-card {
+    background: #cfdccf;
+    width: 360px;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.register-card h2 {
+    margin-bottom: 20px;
+    color: #1b1b1b;
+}
+
+/* INPUTS */
+.register-card input,
+.register-card select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 20px;
+    border: 1px solid #aaa;
+    outline: none;
+    font-size: 14px;
+}
+
+.register-card label {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* BUTTON */
+.register-card button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background: #1b5e20;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.register-card button:hover {
+    background: #144d17;
+}
+
+/* MESSAGE */
+#msg {
+    margin-top: 10px;
+    font-size: 13px;
+    color: red;
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+    background: #2f3b45;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 480px) {
+    .register-card {
+        width: 90%;
+    }
+
+    .nav-right a {
+        margin-left: 10px;
+        font-size: 13px;
+    }
+}
+

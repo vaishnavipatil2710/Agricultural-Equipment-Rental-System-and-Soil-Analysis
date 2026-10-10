@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - AgriRent Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="nav-left">AgriRent Hub</div>
+        <div class="nav-right">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="register.html">Register</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="login-container">
+
+        <div class="login-card">
+            <h2>Login</h2>
+
+            <form onsubmit="event.preventDefault(); loginUser();">
+
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <select id="role" required 
+                        style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; background-color: white;">
+                        <option value="" disabled selected>Select Login Role</option>
+                        <option value="USER">Farmer (User)</option>
+                        <option value="VENDOR">Equipment Owner (Vendor)</option>
+                        <option value="DELIVERY_PARTNER">Delivery Partner</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="mobile" 
+                        placeholder="Mobile Number"
+                        maxlength="10"
+                        onkeydown="return allowOnlyDigits(event, 10, this)"
+                        oninput="sanitizeInput(this, 10)"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="aadhaar" 
+                        placeholder="Aadhaar Number"
+                        maxlength="12"
+                        onkeydown="return allowOnlyDigits(event, 12, this)"
+                        oninput="sanitizeInput(this, 12)"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+
+                <p id="msg" style="margin-top: 15px; font-weight: bold;"></p>
+
+            </form>
+            
+            <p style="margin-top: 20px;">
+                Don't have an account? <a href="register.html">Register here</a>
+            </p>
+        </div>
+
+    </section>
+</main>
+
+<footer class="footer">
+    © 2025 AgriRent Hub
+</footer>
+
+<script src="../js/login.js"></script>
+
+</body>
+</html>

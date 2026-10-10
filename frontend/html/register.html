@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - AgriRent Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER / NAVBAR ================= -->
+<header>
+    <nav class="navbar">
+        <div class="nav-left">AgriRent Hub</div>
+        <div class="nav-right">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="login.html">Login</a>
+        </div>
+    </nav>
+</header>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main>
+
+    <section class="register-container">
+
+        <div class="register-card">
+            <h2>Register for AgriRent Hub!</h2>
+
+            <form onsubmit="event.preventDefault(); registerUser();">
+
+                <input type="text" id="name" placeholder="Full Name" required>
+
+                <input type="text" id="address" placeholder="Address" required>
+
+               <input
+    type="text"
+    id="aadhaar"
+    placeholder="Aadhaar Number"
+    inputmode="numeric"
+    onkeydown="return allowOnlyDigits(event, 12, this)"
+    oninput="sanitizeInput(this, 12)"
+    required
+>
+
+<input
+    type="text"
+    id="mobile"
+    placeholder="Mobile Number"
+    inputmode="numeric"
+    onkeydown="return allowOnlyDigits(event, 10, this)"
+    oninput="sanitizeInput(this, 10)"
+    required
+>
+
+                <label for="role">Register as:</label>
+                <select id="role">
+                    <option value="USER">User</option>
+                    <option value="VENDOR">Vendor</option>
+                    <option value="DELIVERY_PARTNER">Delivery Partner</option>
+                </select>
+
+                <button type="submit">Register</button>
+
+                <p id="msg"></p>
+
+            </form>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    © 2025 AgriRent Hub | All rights reserved
+</footer>
+
+<script src="../js/register.js"></script>
+</body>
+</html>
+

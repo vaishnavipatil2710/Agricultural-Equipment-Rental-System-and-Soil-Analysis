@@ -1,0 +1,733 @@
+/* =========================================================
+   AGRIRENT HUB - MANAGE EQUIPMENT
+   UI ONLY
+   Backend + JavaScript unchanged
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.manage-page {
+    min-height: calc(100vh - 60px);
+
+    padding: 42px 4% 70px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239, 248, 239, 0.96),
+            rgba(220, 240, 222, 0.92)
+        ),
+        url("../assets/register.jpg")
+        center / cover no-repeat;
+
+    color: #26352a;
+
+    box-sizing: border-box;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.manage-page h2 {
+    margin: 0;
+
+    color: #1b5e20;
+
+    font-size: clamp(27px, 3vw, 36px);
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+}
+
+.manage-page h2::after {
+    content: "";
+
+    display: block;
+
+    width: 58px;
+    height: 4px;
+
+    margin-top: 11px;
+
+    background: #43a047;
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   WELCOME MESSAGE
+========================================================= */
+
+.welcome-text {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin: 18px 0 12px;
+
+    padding: 10px 15px;
+
+    background: #e8f5e9;
+
+    color: #1b5e20;
+
+    border: 1px solid #c8e6c9;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 3px 10px rgba(46, 125, 50, 0.07);
+}
+
+
+/* =========================================================
+   ADD EQUIPMENT BUTTON
+========================================================= */
+
+.add-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 14px 0 22px;
+
+    padding: 11px 20px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        #2e7d32,
+        #43a047
+    );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 14px rgba(46, 125, 50, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.add-btn:hover {
+    background: linear-gradient(
+        135deg,
+        #1b5e20,
+        #2e7d32
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(46, 125, 50, 0.28);
+}
+
+.add-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TOTAL EQUIPMENT
+========================================================= */
+
+.total-count {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 0 0 16px;
+
+    padding: 8px 13px;
+
+    background: rgba(255, 255, 255, 0.90);
+
+    border: 1px solid #dce9df;
+
+    border-radius: 8px;
+
+    color: #526158;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.total-count span {
+    color: #1b5e20;
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   EQUIPMENT TABLE
+========================================================= */
+
+.equipment-table {
+    width: 100%;
+
+    min-width: 900px;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(43, 77, 49, 0.12);
+
+    border: 1px solid #e2ebe3;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.equipment-table th {
+    padding: 15px 13px;
+
+    background: linear-gradient(
+        135deg,
+        #1b5e20,
+        #2e7d32
+    );
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    border: none;
+}
+
+.equipment-table th:first-child {
+    border-top-left-radius: 15px;
+}
+
+.equipment-table th:last-child {
+    border-top-right-radius: 15px;
+}
+
+
+/* =========================================================
+   TABLE CELLS
+========================================================= */
+
+.equipment-table td {
+    padding: 14px 12px;
+
+    color: #4d5a50;
+
+    font-size: 13px;
+
+    text-align: center;
+
+    vertical-align: middle;
+
+    border: none;
+
+    border-bottom: 1px solid #edf1ed;
+
+    line-height: 1.45;
+
+    transition: background 0.2s ease;
+}
+
+
+/* =========================================================
+   TABLE ROW
+========================================================= */
+
+.equipment-table tbody tr {
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.equipment-table tbody tr:hover {
+    background: #f3faf4;
+
+    box-shadow:
+        inset 4px 0 0 #43a047;
+}
+
+.equipment-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   EQUIPMENT IMAGE
+========================================================= */
+
+.equipment-table img {
+    width: 100px;
+
+    height: 68px;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+
+    border: 2px solid #e8f5e9;
+
+    box-shadow:
+        0 4px 11px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.equipment-table tbody tr:hover img {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 6px 15px rgba(46, 125, 50, 0.18);
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.equipment-table td:nth-child(1) {
+    color: #245b29;
+
+    font-weight: 700;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.equipment-table td:nth-child(2) {
+    max-width: 230px;
+
+    color: #68746b;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.equipment-table td:nth-child(3) {
+    color: #2e7d32;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   IMAGE COLUMN
+========================================================= */
+
+.equipment-table td:nth-child(4) {
+    min-width: 120px;
+}
+
+
+/* =========================================================
+   AVAILABLE QUANTITY
+========================================================= */
+
+.equipment-table td:nth-child(5) {
+    color: #45554a;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   STATUS - AVAILABLE
+========================================================= */
+
+.status-available {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 6px 11px;
+
+    background: #e8f5e9;
+
+    color: #2e7d32;
+
+    border: 1px solid #c8e6c9;
+
+    border-radius: 50px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   STATUS - NOT AVAILABLE
+========================================================= */
+
+.status-unavailable {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 6px 11px;
+
+    background: #ffebee;
+
+    color: #c62828;
+
+    border: 1px solid #ffcdd2;
+
+    border-radius: 50px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ACTIONS COLUMN
+========================================================= */
+
+.equipment-table th:last-child {
+    width: 150px;
+
+    text-align: center;
+}
+
+.equipment-table td:last-child {
+    width: 150px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   ACTION BUTTON CONTAINER
+========================================================= */
+
+.action-btn {
+    width: 100px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.action-btn button {
+    width: 100px;
+
+    padding: 8px 10px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.action-btn button:hover {
+    transform: translateY(-1px);
+
+    filter: brightness(0.95);
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.action-btn button:first-child {
+    background: #1976d2;
+
+    color: white;
+}
+
+.action-btn button:first-child:hover {
+    background: #1565c0;
+
+    box-shadow:
+        0 4px 10px rgba(25, 118, 210, 0.25);
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.action-btn button:nth-child(2) {
+    background: #d32f2f;
+
+    color: white;
+}
+
+.action-btn button:nth-child(2):hover {
+    background: #b71c1c;
+
+    box-shadow:
+        0 4px 10px rgba(211, 47, 47, 0.25);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .manage-page {
+        padding: 35px 3% 55px;
+
+        overflow-x: auto;
+    }
+
+    .equipment-table {
+        min-width: 900px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .manage-page {
+        padding: 28px 15px 45px;
+    }
+
+    .manage-page h2 {
+        font-size: 27px;
+    }
+
+    .welcome-text {
+        max-width: 100%;
+
+        box-sizing: border-box;
+
+        font-size: 13px;
+    }
+
+    .add-btn {
+        width: 100%;
+
+        margin: 12px 0 18px;
+    }
+
+    .total-count {
+        margin-bottom: 15px;
+    }
+
+    .equipment-table {
+        min-width: 850px;
+    }
+
+    .equipment-table th {
+        padding: 12px 9px;
+
+        font-size: 11px;
+    }
+
+    .equipment-table td {
+        padding: 11px 9px;
+
+        font-size: 12px;
+    }
+
+    .equipment-table img {
+        width: 78px;
+
+        height: 53px;
+    }
+
+    .equipment-table td:nth-child(1) {
+        font-size: 13px;
+    }
+
+    .action-btn {
+        width: 90px;
+    }
+
+    .action-btn button {
+        width: 90px;
+
+        padding: 7px 9px;
+
+        font-size: 11px;
+    }
+}
+
+/* =========================================================
+   FIX STATUS + ACTIONS COLUMN
+========================================================= */
+
+/* Status column */
+.equipment-table th:nth-child(6),
+.equipment-table td:nth-child(6) {
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
+    text-align: center;
+}
+
+/* Actions column */
+.equipment-table th:nth-child(7),
+.equipment-table td:nth-child(7) {
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    text-align: center;
+}
+
+/* Edit + Delete exactly below ACTIONS */
+.equipment-table td:nth-child(7) .action-btn {
+    width: 100px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.equipment-table td:nth-child(7) .action-btn button {
+    width: 100px;
+}
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .manage-page {
+        padding: 24px 10px 40px;
+    }
+
+    .manage-page h2 {
+        font-size: 23px;
+    }
+
+    .manage-page h2::after {
+        width: 48px;
+
+        height: 3px;
+    }
+
+    .welcome-text {
+        font-size: 12px;
+
+        padding: 9px 11px;
+    }
+
+    .add-btn {
+        font-size: 13px;
+
+        padding: 10px 15px;
+    }
+
+    .total-count {
+        font-size: 13px;
+    }
+
+    .action-btn {
+        width: 85px;
+    }
+
+    .action-btn button {
+        width: 85px;
+    }
+}

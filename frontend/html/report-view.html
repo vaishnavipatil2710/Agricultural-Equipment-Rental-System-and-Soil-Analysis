@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Health Report | AgriRent Hub</title>
+    <link rel="stylesheet" href="../css/report-view.css">
+    <script src="../js/lib/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="report-container" id="printableReport">
+        <header class="report-header">
+            <div class="logo-section">
+                <h1>AgriRent Hub</h1>
+                <p>Digital Agriculture Solutions</p>
+            </div>
+            <div class="report-title">
+                <h2>Soil Health Certificate</h2>
+                <p>ID: <span id="reportID"></span></p>
+            </div>
+        </header>
+
+        <section class="meta-info">
+            <p><strong>Farmer Name:</strong> <span id="farmerName"></span></p>
+            <p><strong>Date of Analysis:</strong> <span id="reportDate"></span></p>
+        </section>
+
+        <div class="status-banner" id="statusBanner">
+            Status: <span id="soilStatus">Healthy</span>
+        </div>
+
+        <section class="results-grid">
+            <div class="result-card">
+                <label>pH Level</label>
+                <div class="value" id="res-ph">--</div>
+            </div>
+            <div class="result-card">
+                <label>Moisture</label>
+                <div class="value" id="res-moisture">--</div>
+            </div>
+            <div class="result-card">
+                <label>Nitrogen (N)</label>
+                <div class="value" id="res-n">--</div>
+            </div>
+            <div class="result-card">
+                <label>Phosphorus (P)</label>
+                <div class="value" id="res-p">--</div>
+            </div>
+            <div class="result-card">
+                <label>Potassium (K)</label>
+                <div class="value" id="res-k">--</div>
+            </div>
+        </section>
+
+        <section class="advice-section">
+            <h3>Expert Recommendations</h3>
+            <p id="res-advice">--</p>
+        </section>
+
+        <section class="crops-section">
+            <h3>Best Crops for this Soil</h3>
+            <div id="res-crops" class="crop-tags"></div>
+        </section>
+
+        <footer class="report-footer">
+            <p>This is an AI-generated report based on pixel analysis. Results should be verified with local laboratories for high-precision farming.</p>
+        </footer>
+    </div>
+
+    <div class="floating-actions">
+        <button class="btn back" onclick="window.history.back()">← Back</button>
+        <button class="btn download" onclick="downloadReport()">Download PDF</button>
+    </div>
+
+    <script src="../js/report-view.js"></script>
+</body>
+</html>

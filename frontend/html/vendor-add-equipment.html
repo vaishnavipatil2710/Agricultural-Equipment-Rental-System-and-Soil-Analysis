@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Equipment | AgriRent Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/vendor-add-equipment.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">AgriRent Hub (Vendor)</div>
+
+    <div class="nav-right">
+        <a href="dashboard.html">Home</a>
+        <a href="vendor-dashboard.html">Dashboard</a>
+        <a href="login.html" onclick="logout()">Logout</a>
+    </div>
+</nav>
+
+
+<main class="add-equipment-page">
+
+    <h2>Add New Equipment</h2>
+
+    <form
+        class="equipment-form"
+        onsubmit="event.preventDefault(); addEquipment();"
+    >
+
+        <!-- EQUIPMENT NAME -->
+
+        <label for="name">
+            Equipment Name
+        </label>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="e.g. Mahindra Tractor 575"
+            required
+        >
+
+
+        <!-- DESCRIPTION -->
+
+        <label for="description">
+            Description
+        </label>
+
+        <textarea
+            id="description"
+            placeholder="Provide details about condition and usage..."
+            required
+        ></textarea>
+
+        <div class="pricing-notice">
+    <strong>Important:</strong> Please enter both
+    <strong>Hourly Price</strong> and
+    <strong>Daily Price</strong>.
+    Both prices are compulsory for renting the equipment.
+</div>
+
+        <!-- HOURLY PRICE -->
+
+        <label for="pricePerHour">
+            Price Per Hour (₹)
+        </label>
+
+        <input
+            type="number"
+            id="pricePerHour"
+            placeholder="e.g. 500"
+            min="1"
+            step="0.01"
+            required
+        >
+
+
+        <!-- DAILY PRICE -->
+
+        <label for="pricePerDay">
+            Price Per Day (₹)
+        </label>
+
+        <input
+            type="number"
+            id="pricePerDay"
+            placeholder="e.g. 3000"
+            min="1"
+            step="0.01"
+            required
+        >
+
+
+        <!-- EQUIPMENT IMAGE -->
+
+        <div id="fileInputGroup">
+
+            <label for="imageFile">
+                Upload Equipment Image (Actual Photo)
+            </label>
+
+            <input
+                type="file"
+                id="imageFile"
+                accept="image/*"
+                required
+            >
+
+            <small style="color: #666; display: block; margin-top: 5px;">
+                * Please upload a clear, real-time photo of the machinery.
+            </small>
+
+        </div>
+
+
+        <!-- AVAILABILITY -->
+
+        <label for="available">
+            Current Availability
+        </label>
+
+        <select id="available">
+
+            <option value="true">
+                Available Now
+            </option>
+
+            <option value="false">
+                Not Available
+            </option>
+
+        </select>
+
+
+        <!-- SUBMIT -->
+
+        <button
+            type="submit"
+            class="btn green"
+        >
+            Add Equipment
+        </button>
+
+
+        <!-- MESSAGE -->
+
+        <p
+            id="msg"
+            style="margin-top: 15px; font-weight: bold;"
+        ></p>
+
+    </form>
+
+</main>
+
+
+<script src="../js/vendor-add-equipment.js"></script>
+
+</body>
+</html>

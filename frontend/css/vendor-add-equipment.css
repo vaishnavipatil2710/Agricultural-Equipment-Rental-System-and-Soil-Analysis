@@ -1,0 +1,381 @@
+/* =========================================================
+   AGRIRENT HUB - ADD EQUIPMENT
+   UI ONLY
+   Backend + JavaScript unchanged
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.add-equipment-page {
+    width: min(620px, 92%);
+
+    margin: 45px auto 60px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.add-equipment-page h2 {
+    margin: 0 0 25px;
+
+    color: #176b3a;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+.add-equipment-page h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    margin: 11px auto 0;
+
+    background: #43a047;
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.equipment-form {
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border: 1px solid #e0e9e2;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(43, 77, 49, 0.12);
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.equipment-form label {
+    display: block;
+
+    margin: 0 0 7px;
+
+    color: #34483a;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.equipment-form label:not(:first-child) {
+    margin-top: 19px;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.equipment-form input,
+.equipment-form textarea,
+.equipment-form select {
+    width: 100%;
+
+    padding: 11px 13px;
+
+    border: 1px solid #d6dfd8;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #26352a;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.equipment-form input::placeholder,
+.equipment-form textarea::placeholder {
+    color: #9aa59d;
+}
+
+
+/* Focus */
+
+.equipment-form input:focus,
+.equipment-form textarea:focus,
+.equipment-form select:focus {
+    border-color: #43a047;
+
+    background: #fbfefb;
+
+    box-shadow:
+        0 0 0 3px rgba(67, 160, 71, 0.12);
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.equipment-form textarea {
+    min-height: 115px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   NUMBER INPUT
+========================================================= */
+
+#pricePerDay {
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FILE UPLOAD
+========================================================= */
+
+#fileInputGroup {
+    margin-top: 19px;
+
+    padding: 15px;
+
+    background: #f5faf6;
+
+    border: 1px dashed #9bc6a0;
+
+    border-radius: 10px;
+}
+
+#fileInputGroup label {
+    margin-top: 0;
+}
+
+#imageFile {
+    padding: 9px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+}
+
+#imageFile::file-selector-button {
+    margin-right: 10px;
+
+    padding: 8px 12px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2e7d32;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+#imageFile::file-selector-button:hover {
+    background: #1b5e20;
+}
+
+#fileInputGroup small {
+    color: #68776d !important;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   AVAILABILITY
+========================================================= */
+
+#available {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.equipment-form button[type="submit"] {
+    width: 100%;
+
+    min-height: 44px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2e7d32,
+            #43a047
+        );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px rgba(46, 125, 50, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.equipment-form button[type="submit"]:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #1b5e20,
+            #2e7d32
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 17px rgba(46, 125, 50, 0.27);
+}
+
+.equipment-form button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+#msg {
+    min-height: 20px;
+
+    margin-top: 15px !important;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .add-equipment-page {
+        width: 92%;
+
+        margin: 30px auto 45px;
+    }
+
+    .add-equipment-page h2 {
+        font-size: 27px;
+    }
+
+    .equipment-form {
+        padding: 22px 18px;
+
+        border-radius: 14px;
+    }
+
+    .equipment-form label {
+        font-size: 12px;
+    }
+
+    .equipment-form input,
+    .equipment-form textarea,
+    .equipment-form select {
+        padding: 10px 11px;
+
+        font-size: 13px;
+    }
+
+    #fileInputGroup {
+        padding: 13px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .add-equipment-page {
+        width: 94%;
+    }
+
+    .add-equipment-page h2 {
+        font-size: 24px;
+    }
+
+    .equipment-form {
+        padding: 19px 15px;
+    }
+
+    .equipment-form button[type="submit"] {
+        min-height: 42px;
+
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,458 @@
+/* =====================
+   INDEX / HOME PAGE
+===================== */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5fff5;
+    color: #2f4f2f;
+
+    /* Smooth page appearance */
+    animation: pageFade 1s ease;
+}
+
+
+/* =====================
+   HERO SECTION
+===================== */
+
+.hero {
+    height: 65vh;
+    background: url("../assets/tractor.jpg") center/cover no-repeat;
+    position: relative;
+
+    /* Slight zoom when page loads */
+    animation: heroZoom 1.5s ease-out;
+}
+
+
+/* Dark overlay */
+
+.overlay {
+    background: rgba(0, 0, 0, 0.25);
+    color: white;
+    height: 100%;
+    text-align: center;
+    padding-top: 140px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================
+   HERO HEADING
+===================== */
+
+.overlay h1 {
+    font-size: 42px;
+    margin: 0;
+
+    animation: slideDown 1s ease-out;
+}
+
+
+/* =====================
+   HERO PARAGRAPH
+===================== */
+
+.overlay p {
+    width: 60%;
+    margin: 20px auto;
+    font-size: 18px;
+
+    animation: fadeUp 1.2s ease-out;
+}
+
+
+/* =====================
+   GET STARTED BUTTON
+===================== */
+
+.get-started-btn {
+    display: inline-block;
+
+    padding: 12px 28px;
+
+    margin-top: 15px;
+
+    background-color: #2e7d32;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation: buttonAppear 1.4s ease-out;
+}
+
+
+/* Button hover */
+
+.get-started-btn:hover {
+
+    background-color: #1b5e20;
+
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Button click */
+
+.get-started-btn:active {
+
+    transform: translateY(0) scale(0.98);
+}
+
+
+/* =====================
+   ABOUT SECTION
+===================== */
+
+.about {
+    padding: 50px;
+    text-align: center;
+
+    animation: fadeUp 1s ease-out;
+}
+
+
+/* About heading */
+
+.about h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.about h2:hover {
+
+    transform: translateY(-3px);
+}
+
+
+/* About paragraph */
+
+.about p {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+}
+
+
+/* =====================
+   FEATURES
+===================== */
+
+.features {
+
+    background-color: #e8f5e9;
+
+    padding: 50px;
+
+    text-align: center;
+}
+
+
+/* Features heading */
+
+.features h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 25px;
+
+    animation: fadeUp 1s ease-out;
+}
+
+
+/* =====================
+   FEATURE BOX
+===================== */
+
+.feature-box {
+
+    display: inline-block;
+
+    width: 250px;
+
+    margin: 20px;
+
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border-radius: 10px;
+
+    vertical-align: top;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background-color 0.35s ease;
+
+    /* Initial animation */
+    animation: featureAppear 0.8s ease-out both;
+}
+
+
+/* Different delay for each card */
+
+.feature-box:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.feature-box:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.feature-box:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+
+/* Feature hover */
+
+.feature-box:hover {
+
+    transform: translateY(-10px);
+
+    background-color: white;
+
+    box-shadow:
+        0 10px 25px rgba(46, 125, 50, 0.18);
+}
+
+
+/* Feature heading */
+
+.feature-box h3 {
+
+    color: #2e7d32;
+
+    transition: color 0.3s ease;
+}
+
+
+.feature-box:hover h3 {
+
+    color: #1b5e20;
+}
+
+
+/* Feature paragraph */
+
+.feature-box p {
+
+    line-height: 1.6;
+
+    color: #526052;
+}
+
+
+/* =====================
+   FOOTER
+===================== */
+
+footer {
+
+    background-color: #c8e6c9;
+
+    padding: 15px;
+
+    text-align: center;
+
+    animation: fadeUp 1s ease-out;
+}
+
+
+/* =====================
+   ANIMATIONS
+===================== */
+
+
+/* Page fade */
+
+@keyframes pageFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Hero image zoom */
+
+@keyframes heroZoom {
+
+    from {
+        transform: scale(1.04);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+
+/* Heading comes from top */
+
+@keyframes slideDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Content comes from bottom */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Button appearance */
+
+@keyframes buttonAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Feature cards */
+
+@keyframes featureAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+
+        height: 55vh;
+
+        padding: 20px;
+    }
+
+
+    .overlay {
+
+        padding-top: 80px;
+    }
+
+
+    .overlay h1 {
+
+        font-size: 26px;
+    }
+
+
+    .overlay p {
+
+        width: 90%;
+
+        font-size: 15px;
+    }
+
+
+    .get-started-btn {
+
+        padding: 10px 22px;
+
+        font-size: 14px;
+    }
+
+
+    .about {
+
+        padding: 35px 20px;
+    }
+
+
+    .features {
+
+        padding: 35px 20px;
+    }
+
+
+    .feature-box {
+
+        width: 100%;
+
+        max-width: 320px;
+
+        box-sizing: border-box;
+
+        margin: 12px auto;
+
+        display: block;
+    }
+}

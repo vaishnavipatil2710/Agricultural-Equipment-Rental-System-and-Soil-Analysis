@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vendor Dashboard - AgriRent Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Common + Vendor CSS -->
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/vendor-dashboard.css" />
+  </head>
+
+  <body class="vendor-bg">
+   <!-- ================= VENDOR NAVBAR ================= -->
+<nav class="vendor-navbar">
+
+  <div class="vendor-logo">
+    🌾 AgriRent Hub
+  </div>
+
+  <div class="vendor-nav-links">
+
+    <a href="dashboard.html" class="active">
+      🏠 Dashboard
+    </a>
+
+    <a href="manage-equipment.html">
+      🚜 Equipment
+    </a>
+
+    <a href="vendor-bookings.html">
+      📋 Bookings
+    </a>
+
+    <a href="delivery-management.html">
+      🚚 Deliveries
+    </a>
+
+    <a href="overdue-rentals.html">
+      ⚠️ Overdue
+    </a>
+
+    <button class="nav-logout" onclick="logout()">
+      Logout
+    </button>
+
+  </div>
+
+</nav>
+
+    <h1 class="vendor-title">Vendor Dashboard</h1>
+
+    <div class="vendor-container">
+
+      <!-- Manage Products -->
+      <div class="vendor-card">
+        <span>Manage Products</span>
+        <a href="manage-equipment.html" class="btn blue">
+          Manage
+        </a>
+      </div>
+
+      <!-- Manage Bookings -->
+      <div class="vendor-card">
+        <span>Manage Bookings</span>
+        <a href="vendor-bookings.html" class="btn blue">
+          View
+        </a>
+      </div>
+
+      <!-- Manage Deliveries -->
+      <div class="vendor-card">
+        <span>Manage Deliveries</span>
+        <a href="delivery-management.html" class="btn blue">
+          Manage
+        </a>
+      </div>
+
+      <!-- Overdue Rentals -->
+      <div class="vendor-card overdue-dashboard-card">
+        <span>Overdue Rentals</span>
+
+        <a href="overdue-rentals.html" class="btn overdue-btn">
+          View Overdue
+        </a>
+      </div>
+
+      <!-- Overdue Rentals -->
+      <div class="vendor-card overdue-dashboard-card">
+        <span> Refund Request</span>
+
+        <a href="vendor-refund-management.html" class="btn overdue-btn">
+         Refund Request
+        </a>
+      </div>
+
+      <!-- Logout -->
+      <div class="vendor-card">
+        <span>Logout</span>
+        <button class="btn red" onclick="logout()">
+          Logout
+        </button>
+      </div>
+
+    </div>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/vendor-dashboard.js"></script>
+
+  </body>
+</html>

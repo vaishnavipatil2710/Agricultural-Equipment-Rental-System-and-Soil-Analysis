@@ -1,0 +1,433 @@
+/* =========================================
+   DASHBOARD PAGE
+========================================= */
+
+.dashboard-page {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    background: url("../assets/dashboard-bg.jpg") center/cover no-repeat;
+
+    animation: pageFade 0.8s ease;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.dashboard-content {
+    text-align: center;
+
+    margin-top: 70px;
+
+    padding: 0 20px 50px;
+
+    box-sizing: border-box;
+}
+
+.dashboard-content h1 {
+    margin: 0 0 35px;
+
+    color: #26352f;
+
+    font-size: 32px;
+
+    animation: titleAnimation 0.9s ease;
+}
+
+
+/* =========================================
+   CARD CONTAINER
+========================================= */
+
+.card-container {
+    background: rgba(255, 255, 255, 0.85);
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    width: min(1100px, 100%);
+
+    margin: auto;
+
+    box-sizing: border-box;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    animation: containerAppear 0.9s ease;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.dashboard-page .card {
+    background: #ffffff;
+
+    width: 100%;
+
+    min-height: 170px;
+
+    padding: 25px 20px;
+
+    box-sizing: border-box;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    opacity: 0;
+
+    animation: cardAppear 0.7s ease forwards;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.dashboard-page .card h3 {
+    margin: 0 0 10px;
+
+    color: #26352f;
+
+    font-size: 20px;
+}
+
+.dashboard-page .card p {
+    margin: 0 0 18px;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   CARD ANIMATION DELAY
+========================================= */
+
+.dashboard-page .card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.dashboard-page .card:nth-child(2) {
+    animation-delay: 0.35s;
+}
+
+.dashboard-page .card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.dashboard-page .card:nth-child(4) {
+    animation-delay: 0.65s;
+}
+
+.dashboard-page .card:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.dashboard-page .card:nth-child(6) {
+    animation-delay: 0.95s;
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.dashboard-page .card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================
+   DASHBOARD BUTTONS
+   Overrides common.css safely
+========================================= */
+
+.dashboard-page .card .btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 20px;
+
+    min-height: auto;
+
+    border-radius: 5px;
+
+    border: none;
+
+    text-decoration: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.dashboard-page .card .btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.15);
+
+    opacity: 0.95;
+}
+
+
+/* Keep existing button colors */
+
+.dashboard-page .card .btn.green {
+    background: #2e7d32;
+
+    color: #ffffff;
+}
+
+.dashboard-page .card .btn.blue {
+    background: #1976d2;
+
+    color: #ffffff;
+}
+
+.dashboard-page .card .btn.red {
+    background: #d32f2f;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   AI CARD
+========================================= */
+
+.dashboard-page .ai-card {
+    border-top: 4px solid #2e7d32;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.dashboard-page .ai-card h3 {
+    color: #2e7d32;
+}
+
+.dashboard-page .ai-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 15px 30px rgba(46, 125, 50, 0.25);
+}
+
+
+/* AI BUTTON */
+
+.dashboard-page .ai-btn {
+    background-color: #2e7d32 !important;
+
+    color: #ffffff !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.dashboard-page .ai-btn:hover {
+    transform: scale(1.07);
+
+    box-shadow:
+        0 6px 15px rgba(46, 125, 50, 0.3);
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes pageFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes titleAnimation {
+
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes containerAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   TABLET
+   769px - 1024px
+========================================= */
+
+@media (max-width: 1024px) {
+
+    .dashboard-content {
+        margin-top: 60px;
+    }
+
+    .card-container {
+        width: min(750px, 100%);
+
+        grid-template-columns: repeat(2, 1fr);
+
+        padding: 25px;
+
+        gap: 20px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   Below 768px
+========================================= */
+
+@media (max-width: 768px) {
+
+    .dashboard-content {
+        margin-top: 45px;
+
+        padding: 0 15px 40px;
+    }
+
+    .dashboard-content h1 {
+        font-size: 26px;
+
+        margin-bottom: 25px;
+    }
+
+    .card-container {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+
+        gap: 18px;
+
+        border-radius: 10px;
+    }
+
+    .dashboard-page .card {
+        width: 100%;
+
+        min-height: 160px;
+
+        padding: 20px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   Below 480px
+========================================= */
+
+@media (max-width: 480px) {
+
+    .dashboard-content {
+        margin-top: 35px;
+    }
+
+    .dashboard-content h1 {
+        font-size: 21px;
+    }
+
+    .card-container {
+        padding: 15px;
+
+        gap: 15px;
+    }
+
+    .dashboard-page .card {
+        min-height: 150px;
+
+        padding: 18px;
+    }
+
+    .dashboard-page .card .btn {
+        font-size: 14px;
+
+        padding: 10px 18px;
+    }
+}

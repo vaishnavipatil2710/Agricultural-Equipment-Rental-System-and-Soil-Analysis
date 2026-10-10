@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5fff5;
+    color: #2f4f2f;
+}
+
+/* HERO */
+.hero {
+    height: 65vh;
+    background: url("../assets/tractor.jpg") center/cover no-repeat;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.25);
+    color: white;
+    height: 70%;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.overlay h1 {
+    font-size: 42px;
+}
+
+.overlay p {
+    width: 60%;
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+.overlay button {
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ABOUT */
+.about {
+    padding: 50px;
+    text-align: center;
+}
+
+/* FEATURES */
+.features {
+    background-color: #e8f5e9;
+    padding: 50px;
+    text-align: center;
+}
+
+.feature-box {
+    display: inline-block;
+    width: 250px;
+    margin: 20px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #c8e6c9;
+    padding: 15px;
+    text-align: center;
+}
+.center {
+    text-align: center;
+    margin: 30px 0;
+}
+.get-started-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* DASHBOARD PAGE */
+/* ======================
+   DASHBOARD PAGE
+   ====================== */
+
+.dashboard-page {
+    margin: 0;
+    min-height: 100vh;
+    background: url("../assets/dashboard-bg.jpg") center / cover no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    height: 55px;
+    background: #2f3b45;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-left {
+    font-weight: bold;
+}
+
+/* MAIN CONTENT */
+.dashboard-content {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.dashboard-content h1 {
+    color: white;
+    margin-bottom: 40px;
+}
+
+/* CARD CONTAINER */
+.card-container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin: auto;
+}
+
+/* CARD */
+.card {
+    background: white;
+    width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* BUTTONS */
+.btn {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.green { background: #2e7d32; }
+.blue  { background: #1976d2; }
+.red   { background: #d32f2f; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .card-container {
+        width: 90%;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE STYLES
+   ========================= */
+@media (max-width: 768px) {
+
+    .hero {
+        height: 55vh;
+        padding: 20px;
+    }
+
+    .overlay {
+        margin-top: 60px;
+        padding: 20px;
+        width: 90%;
+    }
+
+    .overlay h1 {
+        font-size: 26px;
+    }
+
+    .overlay p {
+        font-size: 15px;
+    }
+
+    .overlay button {
+        width: 100%;
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .about, .features {
+        padding: 25px 15px;
+    }
+
+    .feature-box {
+        width: 100%;
+        margin: 15px 0;
+    }
+}
+

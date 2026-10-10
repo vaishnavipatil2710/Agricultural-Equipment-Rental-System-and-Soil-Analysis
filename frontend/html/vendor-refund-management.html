@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Management | AgriRent Hub</title>
+    <link rel="stylesheet" href="../css/vendor-refund-management.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="vendor-dashboard.html" class="back-link">
+            ← Vendor Dashboard
+        </a>
+        <h2>AgriRent Hub</h2>
+    </header>
+
+    <main class="container">
+        <div class="page-heading">
+            <div>
+                <h1>Refund Request Management</h1>
+                <p>Review failed deliveries and manage farmer refund requests.</p>
+            </div>
+            <button id="refreshBtn" class="refresh-btn">
+                ↻ Refresh
+            </button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <p>Pending Requests</p>
+                <h2 id="pendingCount">0</h2>
+            </div>
+            <div class="stat-card">
+                <p>Total Requested</p>
+                <h2 id="totalAmount">₹0</h2>
+            </div>
+        </div>
+
+        <div id="message" class="message">
+            Loading refund requests...
+        </div>
+
+        <section id="refundList" class="refund-list"></section>
+    </main>
+
+    <script src="../js/vendor-refund-management.js"></script>
+</body>
+</html>

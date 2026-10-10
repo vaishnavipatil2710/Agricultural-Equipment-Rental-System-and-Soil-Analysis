@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Delivery Tracking | AgriRent Hub</title>
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="../css/delivery-tracking.css">
+
+    <!-- Leaflet Map CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">🌾 AgriRent Hub</div>
+
+        <a href="user-bookings.html" class="back-btn">
+            ← Back to My Bookings
+        </a>
+    </nav>
+
+    <!-- MAIN CONTAINER -->
+    <main class="container">
+
+        <!-- PAGE HEADER -->
+        <header class="page-header">
+            <h1>Delivery Tracking</h1>
+            <p>
+                Track your agricultural equipment delivery and
+                check its latest reported location.
+            </p>
+        </header>
+
+        <!-- LOADING -->
+        <div id="loading" class="loading">
+            Loading delivery details...
+        </div>
+
+        <!-- ERROR MESSAGE -->
+        <div id="errorBox" class="error-box hidden">
+            <p id="errorMessage">
+                Unable to load delivery details.
+            </p>
+        </div>
+
+        <!-- DELIVERY CARD -->
+        <section id="deliveryCard" class="delivery-card hidden">
+
+            <!-- EQUIPMENT HEADER -->
+            <div class="equipment-header">
+                <div>
+                    <span class="small-title">EQUIPMENT DETAILS</span>
+
+                    <h2 id="equipmentName">Equipment Name</h2>
+
+                    <p>
+                        Booking ID:
+                        <strong id="bookingId">-</strong>
+                    </p>
+                </div>
+
+                <span id="statusBadge" class="status-badge">
+                    PENDING
+                </span>
+            </div>
+
+            <!-- DELIVERY ADDRESS -->
+            <section class="info-section">
+                <h3>📍 Delivery Address</h3>
+
+                <p id="deliveryAddress">
+                    Loading delivery address...
+                </p>
+            </section>
+
+            <!-- LIVE TRACKING MAP -->
+            <section
+                class="live-tracking-section"
+                id="liveTrackingSection"
+            >
+                <h3>📍 Live Delivery Location</h3>
+
+                <p>
+                    View the latest GPS location reported by
+                    your delivery partner for this booking.
+                </p>
+
+                <div
+                    class="gps-live-indicator"
+                    id="gpsStatus"
+                    role="status"
+                    aria-live="polite"
+                >
+                    Waiting for GPS location...
+                </div>
+
+                <!-- Leaflet Map -->
+                <div
+                    id="deliveryMap"
+                    aria-label="Delivery partner location map"
+                ></div>
+
+                <!-- GPS INFORMATION -->
+                <div class="gps-details">
+
+                    <div class="gps-info-card">
+                        <span class="gps-label">Latitude</span>
+                        <span
+                            class="gps-value"
+                            id="gpsLatitude"
+                        >
+                            Not available
+                        </span>
+                    </div>
+
+                    <div class="gps-info-card">
+                        <span class="gps-label">Longitude</span>
+                        <span
+                            class="gps-value"
+                            id="gpsLongitude"
+                        >
+                            Not available
+                        </span>
+                    </div>
+
+                    <div class="gps-info-card">
+                        <span class="gps-label">Last GPS Update</span>
+                        <span
+                            class="gps-value"
+                            id="gpsLastUpdated"
+                        >
+                            Not available
+                        </span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- DELIVERY TIMELINE -->
+            <section class="timeline">
+
+                <h3>Delivery Timeline</h3>
+
+                <div class="timeline-item" id="stepConfirmed">
+                    <div class="timeline-icon">1</div>
+
+                    <div class="timeline-content">
+                        <h4>Booking Confirmed</h4>
+                        <p>Your booking has been confirmed.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" id="stepReady">
+                    <div class="timeline-icon">2</div>
+
+                    <div class="timeline-content">
+                        <h4>Ready for Delivery</h4>
+                        <p>Your equipment is being prepared.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" id="stepAssigned">
+                    <div class="timeline-icon">3</div>
+
+                    <div class="timeline-content">
+                        <h4>Delivery Partner Assigned</h4>
+                        <p>A delivery partner has been assigned.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" id="stepPickup">
+                    <div class="timeline-icon">4</div>
+
+                    <div class="timeline-content">
+                        <h4>Equipment Picked Up</h4>
+                        <p>The delivery partner has picked up the equipment.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" id="stepTransit">
+                    <div class="timeline-icon">5</div>
+
+                    <div class="timeline-content">
+                        <h4>Out for Delivery</h4>
+                        <p>Your equipment is on its way.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" id="stepDelivered">
+                    <div class="timeline-icon">6</div>
+
+                    <div class="timeline-content">
+                        <h4>Delivered</h4>
+                        <p>Your equipment has been delivered.</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- DELIVERY PARTNER -->
+            <section class="partner-card">
+                <h3>🚚 Delivery Partner</h3>
+
+                <p id="partnerText">
+                    Delivery partner details will appear here.
+                </p>
+
+                <div id="partnerDetails"></div>
+            </section>
+
+            <!-- OTP VERIFICATION -->
+            <section id="otpSection" class="otp-card hidden">
+                <h3>🔐 Delivery OTP Verification</h3>
+
+                <p>
+                    Enter the OTP provided for your delivery
+                    to verify receipt of the equipment.
+                </p>
+
+                <div class="otp-box">
+                    <input
+                        type="text"
+                        id="otpInput"
+                        placeholder="Enter OTP"
+                        inputmode="numeric"
+                        maxlength="6"
+                        autocomplete="one-time-code"
+                        aria-label="Delivery OTP"
+                    >
+
+                    <button
+                        type="button"
+                        onclick="verifyOTP()"
+                    >
+                        Verify OTP
+                    </button>
+                </div>
+
+                <p id="otpMessage" aria-live="polite"></p>
+            </section>
+
+            <!-- REFRESH BUTTON -->
+            <button
+                type="button"
+                class="refresh-btn"
+                onclick="loadDelivery()"
+            >
+                ↻ Refresh Delivery Status
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- Leaflet Map JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Existing Delivery Tracking JavaScript -->
+    <script src="../js/delivery-tracking.js"></script>
+
+</body>
+</html>

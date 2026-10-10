@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Bookings - Vendor</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/vendor-bookings.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">AgriRent Hub | Vendor</div>
+    <div class="nav-right">
+         <a href="dashboard.html">Home</a>
+        <a href="vendor-dashboard.html">My Equipment</a>
+        <a href="vendor-bookings.html" class="active">Manage Bookings</a>
+        <a href="login.html" onclick="logout()">Logout</a>
+    </div>
+</nav>
+
+<main class="container">
+    <div class="header-section">
+        <h2>Customer Booking Requests</h2>
+        <p>Review and confirm equipment availability to finalize bookings.</p>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+    <tr>
+        <th>Booking ID</th>
+        <th>Image</th>
+        <th>Customer Name</th>
+        <th>Equipment</th>
+        <th>Duration</th>
+        <th>Total Amount</th>
+        <th>Current Status</th>
+        <th>Action</th>
+    </tr>
+</thead>
+            <tbody id="vendorBookingBody">
+                </tbody>
+        </table>
+    </div>
+</main>
+
+<script src="../js/vendor-bookings.js"></script>
+</body>
+</html>

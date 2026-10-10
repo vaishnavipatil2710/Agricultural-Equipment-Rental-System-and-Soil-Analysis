@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Delivery Partner | AgriRent Hub</title>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/delivery-partner.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="partner-navbar">
+
+    <div class="brand">
+        🚜 AgriRent Hub
+    </div>
+
+
+    <div class="nav-right">
+       
+        <span id="partnerName">
+            Delivery Partner
+        </span>
+
+        <span id="partnerName">
+            <a href="dashboard.html">Home</a>
+        </span>
+
+
+        <button class="logout-btn" onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- MAIN -->
+<main class="partner-container">
+
+    <!-- HEADER -->
+    <section class="welcome-section">
+
+        <h1>Delivery Partner Dashboard</h1>
+
+        <p>
+            Welcome,
+            <strong id="welcomeName">Partner</strong>
+        </p>
+
+    </section>
+
+
+    <!-- PARTNER INFORMATION -->
+    <section class="info-grid">
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🚚
+            </div>
+
+            <div>
+                <span>Vehicle</span>
+
+                <strong id="vehicleInfo">
+                    Loading...
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                📦
+            </div>
+
+            <div>
+                <span>Assigned Deliveries</span>
+
+                <strong id="deliveryCount">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🟢
+            </div>
+
+            <div>
+                <span>Partner Status</span>
+
+                <strong id="partnerStatus">
+                    Loading...
+                </strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DELIVERY SECTION -->
+    <section class="delivery-section">
+
+        <div class="section-header">
+
+            <div>
+                <h2>My Deliveries</h2>
+
+                <p>
+                    Deliveries assigned to you
+                </p>
+            </div>
+
+            <button
+                class="refresh-btn"
+                onclick="loadDeliveries()">
+
+                🔄 Refresh
+
+            </button>
+
+        </div>
+
+
+        <!-- DELIVERY CARDS -->
+        <div id="deliveryContainer">
+
+            <div class="loading">
+                Loading deliveries...
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="../js/delivery-partner.js"></script>
+
+</body>
+
+</html>

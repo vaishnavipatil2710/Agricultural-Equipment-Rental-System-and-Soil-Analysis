@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Overdue Rentals - AgriRent Hub</title>
+
+    <!-- Common CSS -->
+    <link rel="stylesheet"
+          href="../css/common.css">
+
+    <!-- Overdue Rentals CSS -->
+    <link rel="stylesheet"
+          href="../css/overdue-rentals.css">
+</head>
+
+
+<body class="overdue-page">
+
+
+<!-- =====================================================
+     NAVBAR
+     ===================================================== -->
+
+<nav class="navbar">
+
+    <div class="nav-left">
+        AgriRent Hub
+    </div>
+
+    <div class="nav-right">
+
+        <a href="vendor-dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="vendor-bookings.html">
+            Bookings
+        </a>
+
+        <a href="delivery-management.html">
+            Deliveries
+        </a>
+
+        <a href="login.html"
+           onclick="logout()">
+            Logout
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+     ===================================================== -->
+
+<main class="overdue-container">
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="overdue-header">
+
+        <div>
+
+            <h1>
+                ⚠️ Overdue Rentals
+            </h1>
+
+            <p>
+                Manage rentals that have exceeded their
+                scheduled return time.
+            </p>
+
+        </div>
+
+        <button class="refresh-btn"
+                onclick="loadOverdueRentals()">
+
+            🔄 Refresh
+
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         SUMMARY
+         ================================================= -->
+
+    <div class="overdue-summary">
+
+        <div class="summary-card">
+
+            <span class="summary-icon">
+                ⚠️
+            </span>
+
+            <div>
+
+                <p>
+                    Overdue Rentals
+                </p>
+
+                <h2 id="overdueCount">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span class="summary-icon">
+                ₹
+            </span>
+
+            <div>
+
+                <p>
+                    Total Overdue Charges
+                </p>
+
+                <h2 id="totalCharges">
+                    ₹0.00
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         LOADING
+         ================================================= -->
+
+    <div id="loadingMessage"
+         class="loading-message">
+
+        Loading overdue rentals...
+
+    </div>
+
+
+    <!-- =================================================
+         NO DATA
+         ================================================= -->
+
+    <div id="noOverdueMessage"
+         class="no-overdue-message"
+         style="display: none;">
+
+        <div class="empty-icon">
+            ✅
+        </div>
+
+        <h2>
+            No Overdue Rentals
+        </h2>
+
+        <p>
+            Great! All current rentals are within their
+            scheduled rental period.
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         OVERDUE RENTALS
+         ================================================= -->
+
+    <div id="overdueList"
+         class="overdue-list">
+
+        <!-- Cards will be created by JavaScript -->
+
+    </div>
+
+
+</main>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="../js/overdue-rentals.js"></script>
+
+</body>
+
+</html>

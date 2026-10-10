@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Agri AI Assistant - AgriRent Hub</title>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ai-assistant.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="nav-left">
+        🌱 AgriRent Hub
+    </div>
+
+    <div class="nav-right">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="user-dashboard.html">
+            Equipment
+        </a>
+
+        <a href="user-bookings.html">
+            My Bookings
+        </a>
+
+        <a href="ai-assistant.html" class="active">
+            🤖 Agri AI
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= AI PAGE ================= -->
+
+<main class="ai-page">
+
+    <!-- AI HEADER -->
+
+    <section class="ai-header">
+
+        <div class="ai-avatar">
+            🤖
+        </div>
+
+        <div>
+            <h1>Agri AI Assistant</h1>
+
+            <p>
+                Your smart farming assistant for crops,
+                soil and agricultural equipment.
+            </p>
+        </div>
+
+        <span class="online-status">
+            ● Online
+        </span>
+
+    </section>
+
+
+    <!-- ================= CHAT BOX ================= -->
+
+    <section class="chat-container">
+
+        <!-- CHAT MESSAGES -->
+
+        <div id="chatMessages" class="chat-messages">
+
+            <!-- AI welcome message -->
+
+            <div class="message ai-message">
+
+                <div class="message-avatar">
+                    🤖
+                </div>
+
+                <div class="message-content">
+
+                    <span class="message-name">
+                        Agri AI
+                    </span>
+
+                    <p>
+                        Hello! 👋 I'm your Agri AI Assistant.
+                    </p>
+
+                    <p>
+                        I can help you with crops, soil,
+                        farming practices and agricultural
+                        equipment.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= QUICK QUESTIONS ================= -->
+
+        <div class="quick-questions">
+
+            <button onclick="askQuickQuestion('Which crop is suitable for black soil?')">
+                🌱 Crop Suggestion
+            </button>
+
+            <button onclick="askQuickQuestion('How can I improve my soil health?')">
+                🧪 Soil Health
+            </button>
+
+            <button onclick="askQuickQuestion('Which equipment is useful for soil preparation?')">
+                🚜 Equipment
+            </button>
+
+            <button onclick="askQuickQuestion('Give me basic farming tips')">
+                🌾 Farming Tips
+            </button>
+
+        </div>
+
+
+        <!-- ================= INPUT AREA ================= -->
+
+        <div class="chat-input-area">
+
+            <input
+                type="text"
+                id="userMessage"
+                placeholder="Ask something about farming..."
+                autocomplete="off"
+            >
+
+            <button
+                id="sendButton"
+                onclick="sendMessage()">
+
+                Send ➤
+
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="../js/ai-assistant.js"></script>
+
+</body>
+
+</html>

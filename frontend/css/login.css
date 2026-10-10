@@ -1,0 +1,44 @@
+body {
+    min-height: 100vh;
+    background: url("../assets/register.jpg") center/cover no-repeat;
+}
+.login-container {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background: white;
+    padding: 30px;
+    width: 320px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 20px;
+}
+
+.login-card input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 10px;
+    background: #60d219;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#msg {
+    margin-top: 10px;
+    font-size: 14px;
+}

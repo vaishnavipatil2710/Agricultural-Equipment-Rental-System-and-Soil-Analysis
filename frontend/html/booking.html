@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Equipment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Common + Booking CSS -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/booking.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVBAR
+     ========================================================= -->
+
+<nav class="navbar">
+
+    <div class="nav-left">
+        AgriRent Hub
+    </div>
+
+    <div class="nav-right">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="login.html" onclick="logout()">
+            Logout
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     MAIN
+     ========================================================= -->
+
+<main class="booking-page">
+
+    <h2 class="page-title">
+        Book Equipment
+    </h2>
+
+
+    <div class="booking-card">
+
+
+        <!-- =================================================
+             EQUIPMENT DETAILS
+             ================================================= -->
+
+        <h3 id="eqName">
+            Harvester
+        </h3>
+
+        <p id="eqDesc">
+            The modern combine harvester, also called a combine,
+            is a machine designed to harvest a variety of cultivated seeds.
+        </p>
+
+
+        <p>
+            <b>Price per hour:</b>
+            ₹<span id="priceHour">None</span>
+        </p>
+
+        <p>
+            <b>Price per day:</b>
+            ₹<span id="priceDay">8000.00</span>
+        </p>
+
+        <p>
+            <b>Available Quantity:</b>
+            <span id="quantity">1</span>
+        </p>
+
+
+        <!-- EQUIPMENT IMAGE -->
+
+        <img
+            id="equipmentImage"
+            src="https://images.unsplash.com/photo-1598514982846-9f7d7a5b6a8d"
+            alt="Equipment Image"
+        >
+
+
+        <!-- =================================================
+             BOOKING FORM
+             ================================================= -->
+
+        <form
+            class="booking-form"
+            onsubmit="event.preventDefault(); confirmBooking();"
+        >
+
+
+            <!-- BOOKING TYPE -->
+
+            <label for="bookingType">
+                Booking Type
+            </label>
+
+            <select id="bookingType">
+
+                <option value="HOURLY">
+                    Hourly
+                </option>
+
+                <option value="DAILY">
+                    Daily
+                </option>
+
+            </select>
+
+
+            <!-- RENTAL RULE -->
+
+            <div class="rental-rule" id="rentalRule">
+
+                <span>ℹ️</span>
+
+                <span>
+                    Minimum hourly rental duration:
+                    <strong>30 minutes</strong>
+                </span>
+
+            </div>
+
+
+            <!-- BOOKING TIMING INFORMATION -->
+
+            <div class="booking-notice">
+
+                <span>🚚</span>
+
+                <span>
+                    For better chances of equipment availability
+                    and smooth delivery, we recommend placing your
+                    booking request at least
+                    <strong>2 hours</strong>
+                    before your required rental start time.
+                </span>
+
+            </div>
+
+
+            <!-- DYNAMIC TIMING WARNING -->
+
+            <div
+                class="booking-timing-warning"
+                id="bookingTimingWarning"
+                style="display: none;"
+            >
+                ⚠️ Your selected rental start time is less than
+                2 hours from now. You can still submit the request,
+                but equipment availability and delivery will depend
+                on vendor approval.
+            </div>
+
+
+            <!-- =================================================
+                 DELIVERY ADDRESS
+                 ================================================= -->
+
+            <label for="deliveryAddress">
+                Delivery Address
+            </label>
+
+            <textarea
+                id="deliveryAddress"
+                name="deliveryAddress"
+                rows="3"
+                placeholder="Enter the address where you want the equipment delivered"
+                required
+            ></textarea>
+
+            <div class="address-note">
+                📍 Enter the delivery address for this booking.
+                It can be different from your registered address.
+            </div>
+
+
+            <!-- START DATE -->
+
+            <label for="startDate">
+                Start Date
+            </label>
+
+            <input
+                type="text"
+                id="startDate"
+                placeholder="YYYY-MM-DD"
+                maxlength="10"
+                required
+            >
+
+
+            <!-- START TIME -->
+
+            <label for="startTime">
+                Start Time
+            </label>
+
+            <input
+                type="time"
+                id="startTime"
+                required
+            >
+
+
+            <!-- END DATE -->
+
+            <label for="endDate">
+                End Date
+            </label>
+
+            <input
+                type="text"
+                id="endDate"
+                placeholder="YYYY-MM-DD"
+                maxlength="10"
+                required
+            >
+
+
+            <!-- END TIME -->
+
+            <label for="endTime">
+                End Time
+            </label>
+
+            <input
+                type="time"
+                id="endTime"
+                required
+            >
+
+
+            <!-- TOTAL AMOUNT -->
+
+            <label for="totalAmount">
+                Total Amount (₹)
+            </label>
+
+            <input
+                type="text"
+                id="totalAmount"
+                placeholder="Select Dates"
+                readonly
+            >
+
+
+            <!-- BUTTONS -->
+
+            <div class="btn-group">
+
+                <button
+                    type="submit"
+                    class="btn green"
+                >
+                    Booking Request
+                </button>
+
+                <button
+                    type="button"
+                    class="btn gray"
+                    onclick="goBack()"
+                >
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</main>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="../js/booking.js"></script>
+
+</body>
+</html>

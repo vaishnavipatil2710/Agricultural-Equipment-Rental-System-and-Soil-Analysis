@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Equipment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/edit-equipment.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">AgriRent Hub (Vendor)</div>
+    <div class="nav-right">
+        <a href="dashboard.html">Dashboard</a>
+    </div>
+</nav>
+
+<main class="container">
+
+    <h2 class="page-title">Edit Equipment</h2>
+
+    <div class="form-card">
+
+        <form onsubmit="event.preventDefault(); updateEquipment();">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" rows="4" required></textarea>
+
+           <label for="pricePerHour">Price Per Hour (₹):</label>
+<input
+    type="number"
+    id="pricePerHour"
+    placeholder="e.g. 100"
+    min="1"
+    step="0.01"
+    required
+>
+
+<label for="pricePerDay">Price Per Day (₹):</label>
+<input
+    type="number"
+    id="pricePerDay"
+    placeholder="e.g. 200"
+    min="1"
+    step="0.01"
+    required
+>
+
+            <label for="quantity">Available Quantity:</label>
+            <input type="number" id="quantity" required>
+
+            <label>Current Equipment Photo:</label>
+            <div class="image-preview-container" style="margin-bottom: 15px;">
+                <img id="imagePreview" src="" alt="Equipment Preview" style="max-width: 200px; border-radius: 8px; border: 1px solid #ddd;">
+            </div>
+
+            <label for="imageFile">Update Photo (Leave empty to keep current):</label>
+            <input type="file" id="imageFile" accept="image/*">
+
+            <button class="btn green" type="submit">
+                Update Equipment
+            </button>
+
+        </form>
+
+        <div class="btn-group">
+            <a href="vendor-dashboard.html" class="btn gray">Back to Vendor Dashboard</a>
+            <a href="manage-equipment.html" class="btn blue">← Back to Manage Products</a>
+        </div>
+
+    </div>
+
+</main>
+
+<script src="../js/edit-equipment.js"></script>
+</body>
+</html>

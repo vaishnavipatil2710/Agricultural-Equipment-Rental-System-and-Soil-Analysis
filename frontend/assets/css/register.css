@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url("../assets/tractor-bg.jpg") center/cover no-repeat;
+}
+
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.3);
+}
+
+.register-card {
+    background: #cfdccf;
+    width: 340px;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.register-card h2 {
+    margin-bottom: 20px;
+    color: #1b1b1b;
+}
+
+.register-card input,
+.register-card select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 20px;
+    border: 1px solid #aaa;
+    outline: none;
+}
+
+.register-card label {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.register-card button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background: #1b5e20;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.register-card button:hover {
+    background: #144d17;
+}
+
+#msg {
+    margin-top: 10px;
+    font-size: 13px;
+    color: red;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    .register-card {
+        width: 90%;
+    }
+}

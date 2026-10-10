@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Equipment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Common + Page CSS -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/manage-equipment.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">AgriRent Hub</div>
+    <div class="nav-right">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="vendor-dashboard.html">Vendor Dashboard</a>
+        <a href="login.html" onclick="logout()">Logout</a>
+    </div>
+</nav>
+
+<!-- MAIN -->
+<main class="manage-page">
+
+    <h2>Manage Your Equipment</h2>
+    <p class="welcome-text" id="welcomeText"></p>
+
+    <button class="btn green add-btn" onclick="goToAddEquipment()">
+        + Add New Equipment
+    </button>
+
+    <p class="total-count">Total Equipment: <span id="totalCount">0</span></p>
+
+    <!-- TABLE -->
+    <table class="equipment-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price / Day</th>
+                <th>Image</th>
+                <th>Available Qty</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="equipmentBody">
+            <!-- Data loaded dynamically -->
+        </tbody>
+    </table>
+
+</main>
+
+<script src="../js/manage-equipment.js"></script>
+<script src="../js/common.js"></script>
+
+</body>
+</html>

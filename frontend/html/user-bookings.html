@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Bookings - AgriRent Hub</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/common.css"
+    >
+
+    <!-- Razorpay -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <link
+        rel="stylesheet"
+        href="../css/user-bookings.css"
+    >
+
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="nav-left">
+        AgriRent Hub
+    </div>
+
+
+    <div class="nav-right">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a
+            href="user-bookings.html"
+            class="active"
+        >
+            My Bookings
+        </a>
+
+        <a
+            href="login.html"
+            onclick="logout()"
+        >
+            Logout
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="container">
+
+    <header class="page-header">
+
+        <h1>
+            My Equipment Requests
+        </h1>
+
+        <p>
+            Track your rental requests, payments,
+            rental status and return requests.
+        </p>
+
+    </header>
+
+
+    <!-- =================================================
+         BOOKING CARDS
+    ================================================== -->
+
+    <div
+        id="bookingsGrid"
+        class="bookings-grid"
+    >
+
+        <!-- Booking cards will be loaded by JavaScript -->
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="../js/user-bookings.js"></script>
+
+</body>
+
+</html>

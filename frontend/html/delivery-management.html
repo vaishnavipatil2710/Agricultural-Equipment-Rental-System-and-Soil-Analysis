@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Delivery Management - AgriRent Hub</title>
+
+    <link rel="stylesheet"
+          href="../css/common.css">
+
+    <link rel="stylesheet"
+          href="../css/delivery-management.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="delivery-navbar">
+
+    <div class="nav-brand">
+        🚜 AgriRent Hub | Vendor
+    </div>
+
+    <div class="nav-links">
+
+        <a href="vendor-dashboard.html">
+           Vendor Dashboard
+        </a>
+
+        <a href="vendor-bookings.html">
+            Bookings
+        </a>
+
+        <a href="delivery-management.html"
+           class="active">
+            Deliveries
+        </a>
+        <a href="dashboard.html"
+           class="active">
+            Home
+        </a>
+
+
+        <a href="login.html"
+           onclick="logout()">
+            Logout
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     PAGE HEADER
+===================================================== -->
+
+<section class="page-header">
+
+    <div>
+
+        <h1>
+            🚚 Delivery Management
+        </h1>
+
+        <p>
+            Manage equipment deliveries for your approved bookings.
+        </p>
+
+    </div>
+
+    <button class="refresh-btn"
+            onclick="loadVendorBookings()">
+
+        ↻ Refresh
+
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     SUMMARY CARDS
+===================================================== -->
+
+<section class="summary-container">
+
+    <div class="summary-card">
+
+        <div class="summary-icon">
+            📦
+        </div>
+
+        <div>
+            <h3 id="totalBookings">
+                0
+            </h3>
+
+            <p>
+                Approved Bookings
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="summary-card">
+
+        <div class="summary-icon">
+            🚚
+        </div>
+
+        <div>
+            <h3 id="activeDeliveries">
+                0
+            </h3>
+
+            <p>
+                Active Deliveries
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="summary-card">
+
+        <div class="summary-icon">
+            ✅
+        </div>
+
+        <div>
+            <h3 id="completedDeliveries">
+                0
+            </h3>
+
+            <p>
+                Completed Deliveries
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LOADING
+===================================================== -->
+
+<div id="loadingBox"
+     class="loading-box">
+
+    <div class="loader"></div>
+
+    <p>
+        Loading delivery information...
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     ERROR
+===================================================== -->
+
+<div id="errorBox"
+     class="error-box"
+     style="display:none;">
+
+</div>
+
+
+<!-- =====================================================
+     DELIVERY CARDS
+===================================================== -->
+
+<main>
+
+    <div id="deliveryContainer"
+         class="delivery-container">
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     NO DATA
+===================================================== -->
+
+<div id="noDataBox"
+     class="no-data"
+     style="display:none;">
+
+    <div class="no-data-icon">
+        📦
+    </div>
+
+    <h2>
+        No approved bookings
+    </h2>
+
+    <p>
+        Approved equipment bookings will appear here
+        for delivery management.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     PARTNER MODAL
+===================================================== -->
+
+<div id="partnerModal"
+     class="modal-overlay"
+     style="display:none;">
+
+    <div class="partner-modal">
+
+        <button class="close-btn"
+                onclick="closePartnerModal()">
+            ×
+        </button>
+
+        <h2>
+            🚚 Assign Delivery Partner
+        </h2>
+
+        <p id="partnerBookingInfo">
+            Select an available delivery partner.
+        </p>
+
+
+        <div id="partnerLoading"
+             class="modal-loading">
+
+            Loading available partners...
+
+        </div>
+
+
+        <div id="partnerList"
+             class="partner-list">
+
+        </div>
+
+
+        <div id="noPartnerBox"
+             class="no-partner"
+             style="display:none;">
+
+            ⚠️ No delivery partners are currently available.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../js/delivery-management.js"></script>
+
+</body>
+</html>
